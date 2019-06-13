@@ -1,15 +1,22 @@
 const express = require("express");
 
-let app = express();
-
 const PORT = process.env.PORT || 8080;
 
+let app = express();
+
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+let exphbs = require("express-handlebars");
 
-app.listen(PORT, function () {
-    console.log("App listening on http://localhost:" + PORT);
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+let routes = require("./controllers/burgers_controller.js");
+
+app.use(routes);
+
+app.listen(PORT, function() {
+  console.log("Express server listening on: http://localhost:" + PORT);
 });
