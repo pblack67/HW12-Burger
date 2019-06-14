@@ -13,8 +13,8 @@ let burger = {
         });
     },
 
-    update: function (burgerName, devoured, id, callback) {
-        orm.updateOne("burgers", "burger_name", "devoured", burgerName, devoured, "id", id, result => {
+    update: function (devoured, id, callback) {
+        orm.updateOne("burgers", "devoured", devoured, "id", id, result => {
             callback(result);
         });
     }

@@ -22,10 +22,9 @@ let orm = {
         });
     },
 
-    updateOne: function (queryTable, column1, column2, value1, value2, whereColumn, whereValue, callback) {
-        let queryString = "UPDATE ?? SET ?? = ?, ?? = ? WHERE ?? = ?;";
-        console.log(callback);
-        connection.query(queryString, [queryTable, column1, value1, column2, value2, whereColumn, whereValue], (err, result) => {
+    updateOne: function (queryTable, column, value, whereColumn, whereValue, callback) {
+        let queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;"
+        connection.query(queryString, [queryTable, column, value ? 1 : 0, whereColumn, whereValue], (err, result) => {
             if (err) {
                 throw err;
             }

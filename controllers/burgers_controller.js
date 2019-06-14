@@ -10,16 +10,16 @@ router.get("/", (request, response) => {
     });
 });
 
-router.get("/api/create", function (request, response) {
+router.post("/api/burger", (request, response) => {
     // Create a burger
+    console.log("Burger Create hit");
 });
 
-router.get("/api/update/:id", function (request, response) {
+router.put("/api/burger/:id", (request, response) => {
     // Update a burger
-});
-
-router.get("/api/delete/:id", function (request, response) {
-    // Create a burger
+    burger.update(request.body.eatme, request.params.id, (result) => {
+        response.end();
+    });
 });
 
 module.exports = router;

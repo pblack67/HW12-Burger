@@ -1,3 +1,13 @@
 {{#each burgers}}
-    <h1>{{burger_name}}</h1>
+    {{#unless devoured}}
+        <h1>{{burger_name}} <button type="button" class="js-eatmeButton" data-id={{id}}>Eat It!</button></h1>
+    {{/unless}}
+{{/each}}
+
+<img src="https://www.lovelesscafe.com/uploads/recipeimages/BBQBaconBurger-web.jpg" alt="Giant Bacon Burger" width=400>
+
+{{#each burgers}}
+    {{#if devoured}}
+        <h1>{{burger_name}}</h1>
+    {{/if}}
 {{/each}}
