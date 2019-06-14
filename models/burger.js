@@ -14,6 +14,7 @@ let burger = {
     },
 
     update: function (devoured, id, callback) {
+        console.log(devoured);
         orm.updateOne("burgers", "devoured", devoured, "id", id, result => {
             callback(result);
         });
@@ -22,15 +23,3 @@ let burger = {
 };
 
 module.exports = burger;
-
-// burger.selectAll(result => {
-//     console.table(result);
-// });
-
-// burger.create("Chocolate Deluxe", 0, result => {
-//     console.log(result);
-// });
-
-// burger.update("Yummy Caribou Meat", 1, 9, result => {
-//     console.log(result);
-// });

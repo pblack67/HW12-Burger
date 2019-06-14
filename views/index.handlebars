@@ -8,6 +8,6 @@
 
 {{#each burgers}}
     {{#if devoured}}
-        <h1>{{burger_name}}</h1>
+        <h1>{{burger_name}} <button type="button" class="js-againButton" data-id={{id}}>Mmmm. Enjoy again.</button></h1>
     {{/if}}
 {{/each}}

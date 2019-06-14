@@ -24,7 +24,8 @@ let orm = {
 
     updateOne: function (queryTable, column, value, whereColumn, whereValue, callback) {
         let queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;"
-        connection.query(queryString, [queryTable, column, value ? 1 : 0, whereColumn, whereValue], (err, result) => {
+        let intValue = (value == true) ? 1 : 0;
+        connection.query(queryString, [queryTable, column, intValue, whereColumn, whereValue], (err, result) => {
             if (err) {
                 throw err;
             }
@@ -35,15 +36,3 @@ let orm = {
 };
 
 module.exports = orm;
-
-// orm.selectAll("burgers", result => {
-//     console.table(result);
-// })
-
-// orm.insertOne("burgers", "burger_name", "devoured", "Onion Deluxe", 0, result => {
-//     console.log(result);
-// });
-
-// orm.updateOne("burgers", "burger_name", "devoured", "Yummy Bear Meat", 0, "id", 6, result => {
-//     console.log(result);
-// });
