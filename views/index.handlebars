@@ -1,21 +1,40 @@
-{{#each burgers}}
-    {{#unless devoured}}
-        <h1>{{burger_name}} <button type="button" class="js-eatmeButton" data-id={{id}}>Eat It!</button></h1>
-    {{/unless}}
-{{/each}}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            {{#each burgers}}
+            {{#unless devoured}}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{burger_name}}</h5>
+                    <button type="button" class="js-eatmeButton btn btn-primary" data-id={{id}}>Eat It!</button>
+                </div>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </div>
 
-<img src="https://www.lovelesscafe.com/uploads/recipeimages/BBQBaconBurger-web.jpg" alt="Giant Bacon Burger" width=400>
+        <div class="col-6 bg-white">
+            <form>
+                <div class="form-group">
+                    <label for="addBurgerName">New Burger Name</label>
+                    <input type="text" class="form-control" id="addBurgerName"
+                        placeholder="Enter new tasty burger name">
+                </div>
+                <button type="submit" id="addBurgerButton" class="btn btn-primary">Add Burger</button>
+            </form>
+        </div>
 
-{{#each burgers}}
-    {{#if devoured}}
-        <h1>{{burger_name}} <button type="button" class="js-againButton" data-id={{id}}>Mmmm. Enjoy again.</button></h1>
-    {{/if}}
-{{/each}}
-
-<form>
-  <div class="form-group">
-    <label for="addBurgerName">New Burger Name</label>
-    <input type="text" class="form-control" id="addBurgerName" placeholder="Enter new tasty burger name">
-  </div>
-  <button type="submit" id="addBurgerButton" class="btn btn-primary">Add Burger</button>
-</form>
+        <div class="col-3 ">
+            {{#each burgers}}
+            {{#if devoured}}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{burger_name}}</h5>
+                    <button type="button" class="js-againButton btn btn-primary" data-id={{id}}>Enjoy again</button>
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
