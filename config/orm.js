@@ -23,8 +23,8 @@ let orm = {
     },
 
     updateOne: function (queryTable, column, value, whereColumn, whereValue, callback) {
-        let queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;"
-        let intValue = (value == true) ? 1 : 0;
+        let queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;";
+        let intValue = (value == "true") ? 1 : 0;
         connection.query(queryString, [queryTable, column, intValue, whereColumn, whereValue], (err, result) => {
             if (err) {
                 throw err;

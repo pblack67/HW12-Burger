@@ -20,4 +20,15 @@ $(function () {
             location.reload();
         });
     });
+
+    $("#addBurgerButton").on("click", function (event) {
+        event.preventDefault();
+        let burgerName = $("#addBurgerName").val().trim();
+        $.ajax("/api/burger/", {
+            type: "POST",
+            data: {burgerName}
+        }).then(function () {
+            location.reload();
+        });
+    });
 });

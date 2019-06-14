@@ -14,7 +14,6 @@ let burger = {
     },
 
     update: function (devoured, id, callback) {
-        console.log(devoured);
         orm.updateOne("burgers", "devoured", devoured, "id", id, result => {
             callback(result);
         });
