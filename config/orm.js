@@ -2,7 +2,6 @@ const connection = require("../config/connection.js");
 
 let orm = {
     selectAll: function (queryTable, callback) {
-        console.log(queryTable, callback);
         let queryString = "SELECT * FROM ??";
         connection.query(queryString, [queryTable], (err, result) => {
             if (err) {

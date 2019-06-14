@@ -12,7 +12,6 @@ router.get("/", (request, response) => {
 
 router.post("/api/burger", (request, response) => {
     // Add a burger
-    console.log("Burger Create hit");
     burger.create(request.body.burgerName, false, (result) => {
         response.end();
     });
