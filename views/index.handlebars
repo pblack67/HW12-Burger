@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-4">
             {{#each burgers}}
             {{#unless devoured}}
-            <div class="card" style="width: 18rem;">
+            <div class="card mt-1 mb-2" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{burger_name}}</h5>
                     <button type="button" class="js-eatmeButton btn btn-primary" data-id={{id}}>Eat It!</button>
@@ -13,7 +13,7 @@
             {{/each}}
         </div>
 
-        <div class="col-6 bg-white">
+        <div class="col-4 bg-white mt-3" style="max-height: 150px">
             <form>
                 <div class="form-group">
                     <label for="addBurgerName">New Burger Name</label>
@@ -24,10 +24,10 @@
             </form>
         </div>
 
-        <div class="col-3 ">
+        <div class="col-4">
             {{#each burgers}}
             {{#if devoured}}
-            <div class="card" style="width: 18rem;">
+            <div class="card mt-1 mb-2" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{burger_name}}</h5>
                     <button type="button" class="js-againButton btn btn-primary" data-id={{id}}>Enjoy again</button>
