@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="col-4 bg-white mt-3 p-3" style="max-height: 150px">
+    <div class="d-flex justify-content-center">
+        <div class="col-4 bg-white mt-3 p-3">
             <form>
                 <div class="form-group">
                     <label for="addBurgerName">New Burger Name</label>
@@ -12,8 +12,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6">
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column">
             {{#each burgers}}
             {{#unless devoured}}
             <div class="card mt-1 mb-2" style="width: 18rem;">
@@ -25,8 +25,7 @@
             {{/unless}}
             {{/each}}
         </div>
-
-        <div class="col-6">
+        <div class="d-flex flex-column">
             {{#each burgers}}
             {{#if devoured}}
             <div class="card mt-1 mb-2" style="width: 18rem;">
