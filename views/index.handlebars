@@ -1,6 +1,19 @@
 <div class="container">
-    <div class="row">
-        <div class="col-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-4 bg-white mt-3 mb-2 p-3">
+            <form>
+                <div class="form-group">
+                    <label for="addBurgerName">New Burger Name</label>
+                    <input type="text" class="form-control" id="addBurgerName"
+                        placeholder="Enter new tasty burger name">
+                </div>
+                <button type="submit" id="addBurgerButton" class="btn btn-primary">Add Burger</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column mr-1">
             {{#each burgers}}
             {{#unless devoured}}
             <div class="card mt-1 mb-2" style="width: 18rem;">
@@ -12,19 +25,7 @@
             {{/unless}}
             {{/each}}
         </div>
-
-        <div class="col-4 bg-white mt-3" style="max-height: 150px">
-            <form>
-                <div class="form-group">
-                    <label for="addBurgerName">New Burger Name</label>
-                    <input type="text" class="form-control" id="addBurgerName"
-                        placeholder="Enter new tasty burger name">
-                </div>
-                <button type="submit" id="addBurgerButton" class="btn btn-primary">Add Burger</button>
-            </form>
-        </div>
-
-        <div class="col-4">
+        <div class="d-flex flex-column ml-1">
             {{#each burgers}}
             {{#if devoured}}
             <div class="card mt-1 mb-2" style="width: 18rem;">
