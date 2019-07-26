@@ -4,6 +4,8 @@
 
 [https://eatdaburger-peb.herokuapp.com/](https://eatdaburger-peb.herokuapp.com/)
 
+![Burger](/images/burger.png)
+
 ## Overview
 
 To run the application:
